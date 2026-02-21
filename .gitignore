@@ -1,0 +1,12 @@
+# Source image (too large, 24000px tall)
+img/momorimo-allinone.jpg
+
+# Debug/test screenshots
+screenshots/
+
+# Empty directories
+svg/
+
+# OS files
+.DS_Store
+Thumbs.db

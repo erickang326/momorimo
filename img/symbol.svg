@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none">
+  <!-- Circle -->
+  <circle cx="50" cy="58" r="38" stroke="currentColor" stroke-width="1.8"/>
+  <!-- Vertical stem -->
+  <line x1="50" y1="96" x2="50" y2="35" stroke="currentColor" stroke-width="1.8"/>
+  <!-- Droplet -->
+  <path d="M50 12 C50 12 36 34 36 43 C36 51 42.3 56 50 56 C57.7 56 64 51 64 43 C64 34 50 12 50 12Z" fill="currentColor"/>
+</svg>
