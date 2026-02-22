@@ -1,7 +1,7 @@
 /* ============================================================
-   MOMORIMO — One-Page Stylesheet (v3.2)
+   MOMORIMO — One-Page Stylesheet (v4.1)
    Warm Light Theme + Gold Accent
-   Hybrid: HTML sections + Detail page images
+   Hero 2-column + origin image sections
    ============================================================ */
 
 /* ===== GOOGLE FONTS ===== */
@@ -21,6 +21,7 @@ button { font: inherit; cursor: pointer; border: none; background: none }
   --bg: #FAFAF7;
   --bg2: #F3F0EB;
   --bg3: #EBE6DF;
+  --bg-warm: #F5F0E8;
   --bg-dark: #1A1615;
 
   --gold: #B8962E;
@@ -34,7 +35,6 @@ button { font: inherit; cursor: pointer; border: none; background: none }
 
   --border: rgba(0, 0, 0, 0.08);
   --border2: rgba(0, 0, 0, 0.12);
-  --success: #2D7A4F;
 }
 
 html { scroll-behavior: smooth }
@@ -69,18 +69,6 @@ body {
   transition: width .08s linear
 }
 
-/* ===== IMAGE FALLBACK (broken/missing images) ===== */
-img {
-  background: linear-gradient(135deg, var(--bg3), var(--bg2));
-  object-fit: cover
-}
-
-.hero-bottle img,
-.purchase-bottle img {
-  object-fit: contain;
-  background: transparent
-}
-
 /* ===== PRELOADER ===== */
 .preloader {
   position: fixed;
@@ -92,11 +80,6 @@ img {
   justify-content: center;
   flex-direction: column;
   gap: 16px
-}
-
-.preloader-symbol {
-  color: var(--gold);
-  opacity: 0
 }
 
 .preloader-logo {
@@ -147,12 +130,6 @@ img {
   font-weight: 600;
   font-size: 16px;
   letter-spacing: .25em;
-  color: var(--gold)
-}
-
-.header-symbol {
-  width: 24px;
-  height: auto;
   color: var(--gold)
 }
 
@@ -251,17 +228,7 @@ img {
   font-weight: 600
 }
 
-.sec-sub {
-  font-family: var(--ff-kr);
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--t2);
-  text-align: center;
-  margin-bottom: 48px;
-  line-height: 1.8
-}
-
-/* ===== SEC 1: HERO ===== */
+/* ===== SEC 1: HERO (2단 레이아웃) ===== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -271,24 +238,58 @@ img {
   position: relative;
   overflow: hidden;
   background: var(--bg);
-  padding: 120px 40px 80px
+  padding: 80px 40px 40px
 }
 
 .hero-content {
-  text-align: center;
-  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: auto auto;
+  gap: 16px 48px;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  z-index: 1
+}
+
+.hero-top {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: flex-start
+}
+
+.hero-bottom {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.hero-right {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(60px)
+}
+
+.hero-right img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent
 }
 
 .hero-logo {
   font-family: var(--ff);
   font-weight: 700;
-  font-size: 52px;
+  font-size: 56px;
   letter-spacing: .3em;
   color: var(--gold);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   opacity: 0;
   transform: scale(.95)
 }
@@ -296,11 +297,11 @@ img {
 .hero-sub {
   font-family: var(--ff);
   font-weight: 300;
-  font-size: 13px;
-  letter-spacing: .4em;
+  font-size: 14px;
+  letter-spacing: .35em;
   color: var(--t3);
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   opacity: 0
 }
 
@@ -314,8 +315,8 @@ img {
 .hero-kr,
 .hero-kr2 {
   font-family: var(--ff-kr);
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 24px;
   color: var(--t1);
   overflow: hidden
 }
@@ -323,10 +324,10 @@ img {
 .hero-kr { margin-bottom: 4px }
 
 .hero-kr2 {
-  font-weight: 300;
-  font-size: 17px;
+  font-weight: 400;
+  font-size: 20px;
   color: var(--t2);
-  margin-bottom: 40px
+  margin-bottom: 32px
 }
 
 .hero-kr span,
@@ -336,32 +337,25 @@ img {
   transform: translateY(20px)
 }
 
-.hero-bottle {
-  margin-bottom: 32px;
-  opacity: 0;
-  transform: translateY(60px);
-  max-width: 280px
-}
-
-.hero-bottle img {
-  width: 100%;
-  height: auto;
-  background: transparent
-}
-
 .hero-stats {
   display: flex;
-  gap: 48px;
-  margin-bottom: 32px;
+  gap: 20px;
+  margin-bottom: 24px;
   opacity: 0
 }
 
-.stat-badge { text-align: center }
+.stat-badge {
+  text-align: center;
+  padding: 20px 32px;
+  background: linear-gradient(135deg, rgba(184, 150, 46, 0.08), rgba(184, 150, 46, 0.03));
+  border: 2px solid rgba(184, 150, 46, 0.25);
+  border-radius: 16px
+}
 
 .stat-num {
   font-family: var(--ff);
   font-weight: 700;
-  font-size: 40px;
+  font-size: 52px;
   background: linear-gradient(180deg, var(--gold), var(--gold-l));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -370,49 +364,94 @@ img {
 
 .stat-unit {
   font-family: var(--ff);
-  font-weight: 300;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 24px;
   color: var(--gold)
 }
 
 .stat-label {
   display: block;
   font-family: var(--ff-kr);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--t1);
+  margin-top: 6px
+}
+
+/* 인증 씰 뱃지 */
+.hero-seals {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+  opacity: 0
+}
+
+.seal-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 14px 24px;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  background: rgba(184, 150, 46, 0.05);
+  font-family: var(--ff-kr);
+  font-size: 14px;
+  color: var(--t2);
+  text-align: center
+}
+
+.seal-stars {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 3px
+}
+
+.seal-label {
   font-size: 13px;
-  color: var(--t3);
-  margin-top: 4px
+  color: var(--t1);
+  font-weight: 500
+}
+
+.seal-badge strong {
+  font-size: 16px;
+  color: var(--t1);
+  font-weight: 700
 }
 
 .hero-usps {
-  display: flex;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
   opacity: 0
 }
 
 .usp-card {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, .5);
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 20px;
+  border: 1.5px solid var(--border2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .6);
   font-family: var(--ff-kr);
-  font-size: 13px;
-  color: var(--t2);
-  transition: border-color .3s
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--t1);
+  transition: border-color .3s, background .3s
 }
 
-.usp-card:hover { border-color: var(--gold) }
-.usp-card svg { color: var(--gold); flex-shrink: 0 }
+.usp-card:hover { border-color: var(--gold); background: rgba(184, 150, 46, 0.04) }
+.usp-card .usp-icon { font-size: 22px; flex-shrink: 0; line-height: 1 }
 
 .scroll-down {
   position: absolute;
-  bottom: 32px;
+  bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   opacity: 0
 }
 
@@ -438,7 +477,7 @@ img {
   animation: scrollBounce 2s infinite
 }
 
-/* ===== DETAIL IMAGE SECTIONS (replaces SEC 2, 4, 5, 6, 10) ===== */
+/* ===== DETAIL IMAGE SECTIONS (origin 이미지) ===== */
 .detail-img-sec {
   width: 100%;
   display: flex;
@@ -450,13 +489,12 @@ img {
   width: 100%;
   max-width: 830px;
   height: auto;
-  display: block;
-  background: var(--bg)
+  background: linear-gradient(135deg, var(--bg3), var(--bg2))
 }
 
-/* ===== SEC 3: BRAND STORY ===== */
+/* ===== OUR STORY (모모세포) ===== */
 .story-sec {
-  padding: 120px 40px;
+  padding: 100px 40px;
   background: var(--bg)
 }
 
@@ -557,111 +595,9 @@ img {
   opacity: 0
 }
 
-/* ===== SEC 7: pH 5.5 ===== */
-.ph-sec {
-  padding: 120px 40px;
-  background: var(--bg)
-}
-
-.ph-inner {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center
-}
-
-.ph-scale {
-  margin: 48px 0 40px;
-  padding: 0 20px
-}
-
-.ph-bar {
-  position: relative;
-  width: 100%;
-  height: 16px;
-  background: linear-gradient(90deg,
-    #E74C3C 0%, #F39C12 25%, #2ECC71 40%,
-    #2ECC71 50%, #3498DB 75%, #8E44AD 100%);
-  border-radius: 8px;
-  overflow: visible
-}
-
-.ph-fill {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, .3);
-  border-radius: 8px;
-  transition: width 1.5s ease-out
-}
-
-.ph-marker {
-  position: absolute;
-  left: 39.3%;
-  top: -32px;
-  transform: translateX(-50%);
-  opacity: 0
-}
-
-.ph-marker span {
-  display: inline-block;
-  font-family: var(--ff);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--gold);
-  background: var(--bg);
-  padding: 4px 12px;
-  border: 2px solid var(--gold);
-  border-radius: 16px
-}
-
-.ph-marker::after {
-  content: '';
-  display: block;
-  width: 2px;
-  height: 20px;
-  background: var(--gold);
-  margin: 4px auto 0
-}
-
-.ph-labels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
-  font-family: var(--ff-kr);
-  font-size: 12px;
-  color: var(--t3)
-}
-
-.ph-desc {
-  font-family: var(--ff-kr);
-  font-size: 17px;
-  color: var(--t2);
-  line-height: 1.8;
-  margin-bottom: 32px
-}
-
-.ph-desc strong { color: var(--t1); font-weight: 600 }
-
-.ph-extras {
-  display: flex;
-  justify-content: center;
-  gap: 32px
-}
-
-.ph-extra {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--ff-kr);
-  font-size: 14px;
-  color: var(--t2)
-}
-
-/* ===== SEC 8: BY THE NUMBERS ===== */
+/* ===== BY THE NUMBERS ===== */
 .numbers-sec {
-  padding: 120px 40px;
+  padding: 100px 40px;
   background: var(--bg2)
 }
 
@@ -715,103 +651,9 @@ img {
   color: var(--t3)
 }
 
-/* ===== SEC 9: HOW TO USE ===== */
-.howto-sec {
-  padding: 120px 40px;
-  background: var(--bg)
-}
-
-.howto-inner {
-  max-width: 900px;
-  margin: 0 auto
-}
-
-.howto-steps {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 16px;
-  margin: 48px 0
-}
-
-.howto-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-  max-width: 240px;
-  opacity: 0;
-  transform: translateY(30px)
-}
-
-.step-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--gold-dim);
-  border: 1px solid var(--gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  transition: transform .3s, box-shadow .3s
-}
-
-.step-circle:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 24px rgba(184, 150, 46, .15)
-}
-
-.step-num {
-  font-family: var(--ff);
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: .15em;
-  color: var(--gold)
-}
-
-.step-title {
-  font-family: var(--ff-kr);
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--t1);
-  text-align: center
-}
-
-.step-desc {
-  font-family: var(--ff-kr);
-  font-weight: 300;
-  font-size: 14px;
-  color: var(--t2);
-  text-align: center;
-  line-height: 1.6
-}
-
-.howto-arrow {
-  font-size: 20px;
-  color: var(--gold);
-  margin-top: 28px;
-  opacity: .5
-}
-
-.howto-note {
-  text-align: center;
-  font-family: var(--ff-kr);
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--t2);
-  padding: 24px 32px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, .5)
-}
-
-.howto-note strong { color: var(--gold); font-weight: 600 }
-
-/* ===== SEC 11: PURCHASE CTA ===== */
+/* ===== PURCHASE CTA ===== */
 .purchase-sec {
-  padding: 120px 40px;
+  padding: 100px 40px;
   background: var(--bg);
   text-align: center
 }
@@ -831,6 +673,7 @@ img {
 .purchase-bottle img {
   width: 100%;
   height: auto;
+  object-fit: contain;
   background: transparent
 }
 
@@ -918,7 +761,72 @@ img {
 .sticky-cta a:hover { color: #fff }
 
 /* ===== FOOTER ===== */
-.footer {
+.product-info {
+  padding: 80px 40px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border)
+}
+
+.product-info-inner {
+  max-width: 860px;
+  margin: 0 auto
+}
+
+.product-info-title {
+  font-family: var(--ff-kr);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--t1);
+  padding: 10px 20px;
+  border: 2px solid var(--t1);
+  display: inline-block;
+  margin-bottom: 32px
+}
+
+.product-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+}
+
+.product-info-row {
+  display: flex;
+  gap: 20px
+}
+
+.product-info-row span {
+  flex-shrink: 0;
+  width: 140px;
+  font-family: var(--ff-kr);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--t1)
+}
+
+.product-info-row p {
+  font-family: var(--ff-kr);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--t1);
+  line-height: 1.8
+}
+
+.product-info-row p small {
+  color: var(--t2);
+  font-size: 14px;
+  font-weight: 400
+}
+
+.product-info-row.full-width {
+  flex-direction: column;
+  gap: 10px
+}
+
+.product-info-row.full-width span {
+  width: auto
+}
+
+.footer-main {
   padding: 60px 40px 32px;
   background: var(--bg-dark);
   color: var(--t-light)
@@ -928,25 +836,25 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px
 }
 
 .footer-col h4 {
   font-family: var(--ff);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: .2em;
-  color: rgba(245, 245, 245, .4);
-  margin-bottom: 12px;
+  color: rgba(245, 245, 245, .5);
+  margin-bottom: 16px;
   text-transform: uppercase
 }
 
 .footer-col p,
 .footer-col a {
   font-family: var(--ff-kr);
-  font-size: 13px;
-  color: rgba(245, 245, 245, .6);
+  font-size: 15px;
+  color: rgba(245, 245, 245, .7);
   line-height: 2;
   display: block
 }
@@ -958,33 +866,14 @@ img {
   margin: 32px auto 0;
   padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, .08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center
-}
-
-.footer-brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--ff);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .2em;
-  color: var(--gold)
-}
-
-.footer-symbol {
-  width: 20px;
-  height: auto;
-  color: var(--gold)
+  text-align: center
 }
 
 .footer-copy {
   font-family: var(--ff);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: .05em;
-  color: rgba(245, 245, 245, .35)
+  color: rgba(245, 245, 245, .45)
 }
 
 /* ===== RESPONSIVE: 768px ===== */
@@ -995,20 +884,34 @@ img {
   .hamburger { display: flex }
 
   .hero { padding: 100px 20px 60px }
-  .hero-logo { font-size: 36px; letter-spacing: .2em }
-  .hero-sub { font-size: 11px; letter-spacing: .25em }
-  .hero-kr { font-size: 17px }
-  .hero-kr2 { font-size: 15px }
-  .hero-bottle { max-width: 200px }
-  .hero-stats { gap: 32px }
-  .stat-num { font-size: 32px }
-  .hero-usps { flex-direction: column; gap: 8px }
-  .usp-card { font-size: 12px; padding: 10px 16px }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+  }
+
+  .hero-top { order: 0; text-align: center; align-items: center }
+  .hero-right { order: 1; max-width: 240px }
+  .hero-bottom { order: 2; text-align: center; align-items: center }
+
+  .hero-logo { font-size: 34px; letter-spacing: .2em }
+  .hero-sub { font-size: 12px; letter-spacing: .2em }
+  .hero-kr { font-size: 18px }
+  .hero-kr2 { font-size: 16px; margin-bottom: 0 }
+  .hero-stats { gap: 28px }
+  .stat-num { font-size: 36px }
+  .hero-seals { flex-direction: column; gap: 10px }
+  .hero-usps { grid-template-columns: 1fr; gap: 10px }
+  .usp-card { font-size: 14px; padding: 14px 20px }
+  .stat-badge { padding: 16px 24px }
+  .stat-num { font-size: 42px }
+
+  .detail-img { max-width: 100% }
 
   .story-sec,
-  .ph-sec,
   .numbers-sec,
-  .howto-sec,
   .purchase-sec { padding: 80px 20px }
 
   .sec-title { font-size: 24px }
@@ -1018,22 +921,20 @@ img {
 
   .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 24px }
 
-  .howto-steps { flex-direction: column; align-items: center }
-  .howto-arrow { transform: rotate(90deg); margin-top: 0 }
-  .howto-step { max-width: 300px }
+  .product-info { padding: 40px 20px }
+  .product-info-row { flex-direction: column; gap: 4px }
+  .product-info-row span { width: auto }
 
-  .ph-extras { flex-direction: column; align-items: center; gap: 16px }
-
-  .footer { padding: 48px 20px 24px }
+  .footer-main { padding: 48px 20px 24px }
   .footer-inner { grid-template-columns: 1fr; gap: 24px }
-  .footer-bottom { flex-direction: column; gap: 12px; text-align: center }
+  .footer-bottom { text-align: center }
 }
 
 /* ===== RESPONSIVE: 480px ===== */
 @media (max-width: 480px) {
   .hero-logo { font-size: 28px }
-  .hero-bottle { max-width: 160px }
-  .stat-num { font-size: 28px }
+  .hero-right { max-width: 200px }
+  .stat-num { font-size: 32px }
   .sec-title { font-size: 20px }
   .numbers-grid { gap: 16px }
   .purchase-headline { font-size: 22px }

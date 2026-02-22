@@ -1,7 +1,7 @@
 /* ============================================================
-   MOMORIMO — Main JavaScript (v3.2)
+   MOMORIMO — Main JavaScript (v4.1)
    GSAP 3.x + ScrollTrigger
-   Hybrid: HTML animations + Detail page images
+   Hero 2-column + origin 이미지 섹션 + 96% 카운터
    ============================================================ */
 
 gsap.registerPlugin(ScrollTrigger);
@@ -93,28 +93,54 @@ function initHero() {
   var tl = gsap.timeline();
 
   tl.to('#hero-logo', { opacity: 1, scale: 1, duration: 0.8, ease: 'power2.out' }, 0.3);
-  tl.to('#hero-sub', { opacity: 1, duration: 0.6 }, 1.0);
-  tl.to('#hero-divider', { width: 200, duration: 0.8, ease: 'power2.inOut' }, 1.5);
+  tl.to('#hero-sub', { opacity: 1, duration: 0.6 }, 0.9);
+  tl.to('#hero-divider', { width: 180, duration: 0.8, ease: 'power2.inOut' }, 1.3);
 
   populateKrText('hero-kr', krText1);
   populateKrText('hero-kr2', krText2);
 
-  tl.to('#hero-kr span', { opacity: 1, y: 0, duration: 0.3, stagger: 0.04 }, 2.0);
-  tl.to('#hero-kr2 span', { opacity: 1, y: 0, duration: 0.3, stagger: 0.04 }, 2.6);
-  tl.to('#hero-bottle', { opacity: 1, y: 0, duration: 1, ease: 'back.out(1.2)' }, 3.0);
-  tl.to('#hero-stats', { opacity: 1, duration: 0.6 }, 3.5);
-  tl.to('#hero-usps', { opacity: 1, duration: 0.6 }, 4.0);
-  tl.to('#scroll-down', { opacity: 1, duration: 0.6 }, 4.4);
+  tl.to('#hero-kr span', { opacity: 1, y: 0, duration: 0.3, stagger: 0.04 }, 1.8);
+  tl.to('#hero-kr2 span', { opacity: 1, y: 0, duration: 0.3, stagger: 0.04 }, 2.4);
+  tl.to('#hero-bottle', { opacity: 1, y: 0, duration: 1, ease: 'back.out(1.2)' }, 2.2);
+  tl.to('#hero-stats', { opacity: 1, duration: 0.6 }, 3.0);
+
+  /* 96% 카운터 애니메이션 */
+  tl.add(function () {
+    animateCounter('stat-satisfaction', 96);
+    animateCounter('stat-repurchase', 96);
+  }, 3.0);
+
+  tl.to('#hero-seals', { opacity: 1, duration: 0.6 }, 3.6);
+  tl.to('#hero-usps', { opacity: 1, duration: 0.6 }, 3.9);
+  tl.to('#scroll-down', { opacity: 1, duration: 0.6 }, 4.2);
+}
+
+/* 카운터 애니메이션 유틸리티 */
+function animateCounter(id, target) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var obj = { val: 0 };
+  gsap.to(obj, {
+    val: target,
+    duration: 1.5,
+    ease: 'power2.out',
+    onUpdate: function () {
+      el.textContent = Math.round(obj.val);
+    }
+  });
 }
 
 function showHeroInstant(t1, t2) {
   gsap.set('#hero-logo', { opacity: 1, scale: 1 });
   gsap.set('#hero-sub', { opacity: 1 });
-  gsap.set('#hero-divider', { width: 200 });
+  gsap.set('#hero-divider', { width: 180 });
   document.getElementById('hero-kr').textContent = t1;
   document.getElementById('hero-kr2').textContent = t2;
   gsap.set('#hero-bottle', { opacity: 1, y: 0 });
   gsap.set('#hero-stats', { opacity: 1 });
+  document.getElementById('stat-satisfaction').textContent = '96';
+  document.getElementById('stat-repurchase').textContent = '96';
+  gsap.set('#hero-seals', { opacity: 1 });
   gsap.set('#hero-usps', { opacity: 1 });
   gsap.set('#scroll-down', { opacity: 1 });
 }
@@ -129,15 +155,7 @@ function populateKrText(id, text) {
   });
 }
 
-/* ===== DETAIL IMAGE SECTIONS — fadeIn on scroll ===== */
-gsap.utils.toArray('.detail-img-sec').forEach(function (sec) {
-  gsap.fromTo(sec, { opacity: 0, y: 30 }, {
-    opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
-    scrollTrigger: { trigger: sec, start: 'top 85%' }
-  });
-});
-
-/* ===== SEC 3: BRAND STORY ===== */
+/* ===== OUR STORY 섹션 애니메이션 ===== */
 gsap.to('.story-title', {
   opacity: 1, y: 0, duration: 1, ease: 'power2.out',
   scrollTrigger: { trigger: '.story-sec', start: 'top 75%' }
@@ -166,26 +184,18 @@ gsap.to('.story-motto-sub', {
   scrollTrigger: { trigger: '.story-motto', start: 'top 85%' }
 });
 
-/* ===== SEC 7: pH GAUGE ===== */
-(function () {
-  var done = false;
-  ScrollTrigger.create({
-    trigger: '.ph-sec',
-    start: 'top 70%',
-    onEnter: function () {
-      if (done || prefersReducedMotion) return;
-      done = true;
-
-      gsap.to('#ph-fill', { width: '39.3%', duration: 1.5, ease: 'power2.out' });
-      gsap.to('#ph-marker', {
-        opacity: 1, duration: 0.4, delay: 1.2,
-        ease: 'back.out(2)'
-      });
+/* ===== DETAIL IMAGE SECTIONS 스크롤 페이드인 ===== */
+gsap.utils.toArray('.detail-img-sec').forEach(function (sec) {
+  gsap.fromTo(sec,
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+      scrollTrigger: { trigger: sec, start: 'top 90%' }
     }
-  });
-})();
+  );
+});
 
-/* ===== SEC 8: NUMBERS ===== */
+/* ===== BY THE NUMBERS 카운터 ===== */
 (function () {
   gsap.utils.toArray('.number-item').forEach(function (item, i) {
     gsap.to(item, {
@@ -228,16 +238,7 @@ gsap.to('.story-motto-sub', {
   });
 })();
 
-/* ===== SEC 9: HOW TO USE ===== */
-gsap.utils.toArray('.howto-step').forEach(function (step, i) {
-  gsap.to(step, {
-    opacity: 1, y: 0, duration: 0.8, delay: i * 0.2,
-    ease: 'power2.out',
-    scrollTrigger: { trigger: '.howto-steps', start: 'top 80%' }
-  });
-});
-
-/* ===== SEC 11: PURCHASE CTA ===== */
+/* ===== PURCHASE CTA ===== */
 gsap.to('.purchase-bottle', {
   opacity: 1, scale: 1, duration: 1, ease: 'power2.out',
   scrollTrigger: { trigger: '.purchase-sec', start: 'top 75%' }

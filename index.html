@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOMORIMO — 탈모증상완화 기능성 올인원 샴푸</title>
-  <meta name="description" content="모모리모 - 모모세포에서 시작하여, 모발을 새롭게. 식약처 인증 탈모증상완화 기능성 올인원 샴푸. 특허 한방 성분 육미지황 HR 함유.">
+  <meta name="description" content="모모리모 - 식약처 인증 탈모증상완화 기능성 올인원 샴푸. 맥주효모추출물 50ppm, 특허 한방 성분 육미지황 HR 6종 함유. 소비자만족 96%, 재구매율 96%.">
   <meta property="og:title" content="MOMORIMO — 탈모증상완화 기능성 올인원 샴푸">
   <meta property="og:description" content="식약처 인증 기능성 샴푸. 소비자만족 96%, 재구매율 96%.">
   <meta property="og:image" content="img/og-image.jpg">
-  <!-- Favicon: img/favicon.png — 180x180px (symbol image) -->
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/favicon.png">
   <link rel="stylesheet" href="css/style.css">
@@ -24,7 +23,6 @@
   <!-- PRELOADER -->
   <!-- ============================================================ -->
   <div class="preloader">
-    <img src="img/symbol.svg" alt="" class="preloader-symbol" width="60" height="78">
     <div class="preloader-logo">MOMORIMO</div>
     <div class="preloader-line"></div>
   </div>
@@ -34,14 +32,11 @@
   <!-- ============================================================ -->
   <header class="header">
     <a href="#hero" class="header-logo">
-      <img src="img/symbol.svg" alt="" class="header-symbol" width="24" height="31">
       <span>MOMORIMO</span>
     </a>
     <nav class="header-nav">
-      <a href="#pain-point">YOUR CONCERN</a>
       <a href="#story">OUR STORY</a>
-      <a href="#functional">INGREDIENTS</a>
-      <a href="#patent">PATENT</a>
+      <a href="#numbers">BY THE NUMBERS</a>
       <a href="#purchase">GET YOURS</a>
     </nav>
     <button class="hamburger" aria-label="Menu">
@@ -52,54 +47,72 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu">
     <a href="#hero">HOME</a>
-    <a href="#pain-point">YOUR CONCERN</a>
     <a href="#story">OUR STORY</a>
-    <a href="#functional">POINT 01</a>
-    <a href="#patent">POINT 02</a>
+    <a href="#numbers">BY THE NUMBERS</a>
     <a href="#purchase">GET YOURS</a>
   </div>
 
   <!-- ============================================================ -->
-  <!-- SEC 1: HERO -->
+  <!-- SEC 1: HERO (2단 레이아웃) -->
   <!-- ============================================================ -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <h1 class="hero-logo" id="hero-logo">MOMORIMO</h1>
-      <p class="hero-sub" id="hero-sub">FUNCTIONAL HAIR LOSS CARE SHAMPOO</p>
-      <div class="hero-divider" id="hero-divider"></div>
-      <p class="hero-kr" id="hero-kr"></p>
-      <p class="hero-kr2" id="hero-kr2"></p>
-
-      <!-- img/hero-bottle.png — 400x700px, transparent bg -->
-      <div class="hero-bottle" id="hero-bottle">
-        <img src="img/hero-bottle.png" alt="모모리모 올인원 샴푸" width="400" height="700">
+      <!-- 상단: 브랜드명 + 한국어 텍스트 -->
+      <div class="hero-top">
+        <h1 class="hero-logo" id="hero-logo">MOMORIMO</h1>
+        <p class="hero-sub" id="hero-sub">FUNCTIONAL HAIR LOSS CARE SHAMPOO</p>
+        <div class="hero-divider" id="hero-divider"></div>
+        <p class="hero-kr" id="hero-kr"></p>
+        <p class="hero-kr2" id="hero-kr2"></p>
       </div>
 
-      <!-- 96% Badges -->
-      <div class="hero-stats" id="hero-stats">
-        <div class="stat-badge">
-          <span class="stat-num" id="stat-satisfaction">96</span><span class="stat-unit">%</span>
-          <span class="stat-label">소비자 만족도</span>
-        </div>
-        <div class="stat-badge">
-          <span class="stat-num" id="stat-repurchase">96</span><span class="stat-unit">%</span>
-          <span class="stat-label">재구매율</span>
-        </div>
+      <!-- 제품 이미지 -->
+      <div class="hero-right" id="hero-bottle">
+        <img src="img/hero-bottle.png" alt="모모리모 올인원 샴푸 1000ml">
       </div>
 
-      <!-- 3 USP Cards -->
-      <div class="hero-usps" id="hero-usps">
-        <div class="usp-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>기능성 탈모 관리</span>
+      <!-- 하단: 통계 + 씰 + USP -->
+      <div class="hero-bottom">
+        <!-- 96% 뱃지 (카운터 애니메이션) -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-badge">
+            <span class="stat-num" id="stat-satisfaction">0</span><span class="stat-unit">%</span>
+            <span class="stat-label">소비자만족</span>
+          </div>
+          <div class="stat-badge">
+            <span class="stat-num" id="stat-repurchase">0</span><span class="stat-unit">%</span>
+            <span class="stat-label">재구매율</span>
+          </div>
         </div>
-        <div class="usp-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
-          <span>모발색상보호 &amp; 손상모 관리</span>
+
+        <!-- 인증 씰 뱃지 -->
+        <div class="hero-seals" id="hero-seals">
+          <div class="seal-badge">
+            <span class="seal-stars">★★★</span>
+            <span class="seal-label">맥주효모추출물[50ppm]</span>
+            <strong>탈모증상완화 기능성</strong>
+          </div>
+          <div class="seal-badge">
+            <span class="seal-stars">★★★</span>
+            <span class="seal-label">육미지황 HR 특허 추출물</span>
+            <strong>건강한 모발 손상모 케어</strong>
+          </div>
         </div>
-        <div class="usp-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
-          <span>고급 허브향 지속력 UP</span>
+
+        <!-- 3 USP Cards -->
+        <div class="hero-usps" id="hero-usps">
+          <div class="usp-card">
+            <span class="usp-icon">🛡️</span>
+            <span>기능성 탈모 관리</span>
+          </div>
+          <div class="usp-card">
+            <span class="usp-icon">✨</span>
+            <span>모발색상보호 및 손상모 관리</span>
+          </div>
+          <div class="usp-card">
+            <span class="usp-icon">🌿</span>
+            <span>고급 허브향 지속력 UP!</span>
+          </div>
         </div>
       </div>
     </div>
@@ -111,16 +124,30 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 2: PAIN POINT (Detail Page Image) -->
+  <!-- SEC 2: BRAND INTRO (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="detail-img-sec" id="pain-point">
-    <img src="img/detail-pain.jpg"
-         alt="두피 건강 체크 - 기름진 두피, 탈모 증상, 건조한 두피, 손상된 모발. 모모리모 올인원 샴푸로 프리미엄 케어하세요"
-         class="detail-img" width="830" height="3800" loading="lazy">
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_02.jpg"
+         alt="MOMORIMO 모모리모 - 오랜시간 두피와 모발 케어를 위해 고민과 연구로 기술력을 완성한 모모리모. 건강한 두피·모발 관리 모모리모로 시작하세요!"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 3: BRAND STORY -->
+  <!-- SEC 3: PAIN POINT (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_03.jpg"
+         alt="아무 샴푸나 사용하시나요? 두피 건강 체크 - 기름진 두피, 탈모 증상, 건조한 두피, 손상된 모발"
+         class="detail-img" loading="lazy">
+  </section>
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_04.jpg"
+         alt="하나라도 해당된다면 모모리모 올인원 샴푸로 프리미엄 케어하세요!"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 4: OUR STORY (HTML — 모모세포 네이밍) -->
   <!-- ============================================================ -->
   <section class="story-sec" id="story">
     <div class="story-inner">
@@ -171,71 +198,129 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 4: MFDS 식약처 인증 (Detail Page Image) -->
+  <!-- SEC 5: PRODUCT SHOWCASE (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="detail-img-sec" id="mfds">
-    <img src="img/detail-mfds.jpg"
-         alt="식약처 인증 탈모 완화 기능성 샴푸. 원료약품: 살리실산, 엘-멘톨, 덱스판테놀. 탈모 증상의 완화에 도움을 준다."
-         class="detail-img" width="830" height="1250" loading="lazy">
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_05.jpg"
+         alt="MOMORIMO 모모리모 올인원 샴푸 - 올리브 잎 배경의 제품 클로즈업"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 5: POINT 01 — 기능성 성분 (Detail Page Image) -->
+  <!-- SEC 6-7: POINT 01 기능성 성분 (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="detail-img-sec" id="functional">
-    <img src="img/detail-ingredients.jpg"
-         alt="POINT 01 기능성 성분 함유 - 맥주효모추출물 50ppm, 멘톨, 판테놀"
-         class="detail-img" width="830" height="5450" loading="lazy">
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_06.jpg"
+         alt="POINT 01 - 탈모 증상 완화에 도움을 주는 기능성 성분 함유. 맥주효모추출물 50ppm"
+         class="detail-img" loading="lazy">
+  </section>
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_07.jpg"
+         alt="두피와 모발 건강 핵심성분, 맥주효모의 힘 - 비오틴, 아미노산, 단백질 등 풍부"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 6: POINT 02 — 특허 한방 성분 (Detail Page Image) -->
+  <!-- SEC 8: 멘톨 (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="detail-img-sec" id="patent">
-    <img src="img/detail-herbs.jpg"
-         alt="POINT 02 특허 한방 성분 육미지황 HR - 지황, 산수유, 택사, 참마, 모란, 토복령 6종 천연물 복합 추출물"
-         class="detail-img" width="830" height="5900" loading="lazy">
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_08.jpg"
+         alt="MENTHOL 멘톨 - 청량하고 시원한 사용감, 혈액순환 촉진으로 두피 모근 모발에 영양과 산소 공급"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 7: POINT 03 — pH 5.5 -->
+  <!-- SEC 9: 판테놀 (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="ph-sec" id="ph">
-    <div class="ph-inner">
-      <div class="sec-label">POINT 03</div>
-      <h2 class="sec-title">두피와 모발에 가장 가까운<br><em>저자극 pH 5.5 약산성</em></h2>
-
-      <div class="ph-scale">
-        <div class="ph-bar">
-          <div class="ph-fill" id="ph-fill"></div>
-          <div class="ph-marker" id="ph-marker">
-            <span>5.5</span>
-          </div>
-        </div>
-        <div class="ph-labels">
-          <span>산성 0</span>
-          <span>중성 7</span>
-          <span>알칼리성 14</span>
-        </div>
-      </div>
-
-      <p class="ph-desc"><strong>모모리모 올인원샴푸</strong><br>예민한 두피에도 안전하게 사용할 수 있습니다.</p>
-
-      <div class="ph-extras">
-        <div class="ph-extra">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>모발색상보호 및 손상모 관리</span>
-        </div>
-        <div class="ph-extra">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <span>고급 허브향 지속력 UP</span>
-        </div>
-      </div>
-    </div>
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_09.jpg"
+         alt="PANTHENOL 판테놀 - 콜라겐 합성을 도와주는 판테놀, 피지 분비 조절 및 건강한 두피 환경 조성"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 8: BY THE NUMBERS -->
+  <!-- SEC 10: MFDS 식약처 인증 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_10.jpg"
+         alt="식약처 인증 탈모 완화 기능성 샴푸 - 원료약품 살리실산 0.250g, 엘-멘톨 0.300g, 덱스판테놀 0.200g. 효능효과: 탈모 증상의 완화에 도움을 준다"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 11: GIFT 선물 세트 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_11.jpg"
+         alt="모모리모 올인원 샴푸 선물 세트 - 본품 2개 구매 시 선물용 고급 쇼핑백 증정"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 12: POINT 02 육미지황 HR (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_12.jpg"
+         alt="POINT 02 - 특허 성분 육미지황 HR 함유. 탈모 방지 및 모발 생장 촉진용 한방 조성물"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 13: 6종 약재 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_13.jpg"
+         alt="육미지황 HR 6종 약재 - 지황뿌리, 산수유열매, 질경이택사, 참마뿌리, 모란뿌리, 중국토복령 추출물"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 14: 특허증 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_14.jpg"
+         alt="특허증 - 특허 제10-0780180호. 탈모 방지 및 모발 생장 촉진용 한방 조성물 및 그 제조방법"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 15: MODEL CTA (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_15.jpg"
+         alt="건강한 두피, 풍성한 모발, 아름다운 머리결 - 모모리모 올인원샴푸 하세요"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 16: POINT 03 비오틴 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_16.jpg"
+         alt="POINT 03 - 비오틴(비타민 B7). 두피 영양과 탈모 완화에 좋은 수용성 비타민"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 17: POINT 04 퍼퓸 효과 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_17.jpg"
+         alt="POINT 04 - 퍼퓸 효과. 고급 플로럴향이 오래오래~ 기능성에 감각적인 향기를 더하다"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 18: POINT 05 pH 5.5 (origin 이미지) -->
+  <!-- ============================================================ -->
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_18.jpg"
+         alt="POINT 05 - 저자극 pH 5.5 약산성. 두피와 모발에 가장 가까운 pH, 예민한 두피에도 안전"
+         class="detail-img" loading="lazy">
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SEC 19: BY THE NUMBERS (HTML — 카운터 애니메이션) -->
   <!-- ============================================================ -->
   <section class="numbers-sec" id="numbers">
     <div class="numbers-inner">
@@ -268,59 +353,30 @@
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 9: HOW TO USE -->
+  <!-- SEC 20: HOW TO USE (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="howto-sec" id="howto">
-    <div class="howto-inner">
-      <div class="sec-label">HOW TO USE</div>
-      <h2 class="sec-title">사용방법</h2>
-
-      <div class="howto-steps">
-        <div class="howto-step">
-          <div class="step-circle">💧</div>
-          <div class="step-num">STEP 01</div>
-          <div class="step-title">충분히 적셔주세요</div>
-          <div class="step-desc">모발을 물로 충분히<br>적셔줍니다.</div>
-        </div>
-        <div class="howto-arrow">&rarr;</div>
-        <div class="howto-step">
-          <div class="step-circle">🧴</div>
-          <div class="step-num">STEP 02</div>
-          <div class="step-title">마사지하며 거품을 내주세요</div>
-          <div class="step-desc">적당량을 덜어 모발과 두피에<br>골고루 마사지하듯 문질러<br>거품을 냅니다.</div>
-        </div>
-        <div class="howto-arrow">&rarr;</div>
-        <div class="howto-step">
-          <div class="step-circle">✨</div>
-          <div class="step-num">STEP 03</div>
-          <div class="step-title">깨끗이 헹궈주세요</div>
-          <div class="step-desc">미온수로 깨끗이<br>헹궈줍니다.</div>
-        </div>
-      </div>
-
-      <div class="howto-note">
-        올인원이니까, 린스·트리트먼트 없이 <strong>모모리모 하나로 충분합니다.</strong>
-      </div>
-    </div>
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_19.jpg"
+         alt="사용방법 - STEP 01 충분히 적셔주세요, STEP 02 마사지하며 거품을 내주세요, STEP 03 깨끗이 헹궈주세요"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 10: GIFT / MODEL SHOWCASE (Detail Page Image) -->
+  <!-- SEC 21: 최종 제품 세트 (origin 이미지) -->
   <!-- ============================================================ -->
-  <section class="detail-img-sec" id="gift">
-    <img src="img/detail-gift.jpg"
-         alt="모모리모 올인원샴푸 - 프리미엄 헤어케어"
-         class="detail-img" width="830" height="1050" loading="lazy">
+  <section class="detail-img-sec">
+    <img src="img/origin/momorimo-allinone-shampoo_detail_20.jpg"
+         alt="모모리모 올인원 샴푸 1000ml - 최종 제품 세트 이미지"
+         class="detail-img" loading="lazy">
   </section>
 
   <!-- ============================================================ -->
-  <!-- SEC 11: PURCHASE CTA -->
+  <!-- SEC 22: PURCHASE CTA -->
   <!-- ============================================================ -->
   <section class="purchase-sec" id="purchase">
     <div class="purchase-inner">
       <div class="purchase-bottle">
-        <!-- img/purchase-bottle.png — 300x525px -->
-        <img src="img/purchase-bottle.png" alt="모모리모 올인원 샴푸" width="300" height="525" loading="lazy">
+        <img src="img/hero-bottle.png" alt="모모리모 올인원 샴푸" width="300" height="525" loading="lazy">
       </div>
       <h2 class="purchase-headline">FIND MOMORIMO</h2>
       <p class="purchase-sub">검색창에서 모모리모를 만나보세요.<br>원하시는 플랫폼에서 바로 구매하실 수 있습니다.</p>
@@ -337,7 +393,7 @@
     </div>
   </section>
 
-  <!-- Sticky CTA (appears after hero, hides at purchase) -->
+  <!-- Sticky CTA -->
   <div class="sticky-cta" id="sticky-cta">
     <a href="#purchase">모모리모 구매하기</a>
   </div>
@@ -346,31 +402,49 @@
   <!-- FOOTER -->
   <!-- ============================================================ -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>BRAND</h4>
-        <p>MOMORIMO</p>
-        <p>Functional Hair Loss Care Shampoo</p>
-      </div>
-      <div class="footer-col">
-        <h4>COMPANY</h4>
-        <p>화장품제조업자: ㈜지코존</p>
-        <p>화장품책임판매업자: ㈜리즈코스</p>
-        <p><a href="https://www.momorimo.com" target="_blank" rel="noopener">www.momorimo.com</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>CONTACT</h4>
-        <p>소비자 상담실</p>
-        <p>070-6056-4449</p>
-        <p>MON-FRI 10:00 - 18:00</p>
+    <!-- 제품 정보 고시 -->
+    <div class="product-info">
+      <div class="product-info-inner">
+        <h3 class="product-info-title">제품 정보 고시</h3>
+        <div class="product-info-grid">
+          <div class="product-info-row">
+            <span>품명</span>
+            <p>모모리모 올인원 샴푸 <small>(띵코맥주효모탈모증상완화올샴푸)</small></p>
+          </div>
+          <div class="product-info-row">
+            <span>용량</span>
+            <p>1,000 ml</p>
+          </div>
+          <div class="product-info-row full-width">
+            <span>전성분</span>
+            <p>정제수, 소듐라우레스설페이트, 부틸렌글라이콜, 소듐라우릴설페이트, 코카미이드디이에이, 소듐C14-16올레핀설포네이트, 소듐클로라이드, 아모디메티콘, 코카미도프로필베타인, 라우릴벤타인, 향료, 소듐벤조에이트, 폴리쿼터늄-10, 스테아라미도프로필디메틸아민, 셋트리모늄클로라이드, 1,2-헥산디이올, 판테놀, 트라이데세스-12, 시트릭애씨드, 구아하이드록시프로필트라이모늄클로라이드, 리모넨, 맥주효모추출물[50ppm], 검정콩추출물, 리날룰, 지황뿌리추출물, 다이소듐이디티에이, 산수유열매추출물, 질경이택사덩이줄기추출물, 참마뿌리추출물, 중국토복령추출물, 모란뿌리추출물, 에틸헥실글리세린, 소엽잎추출물, 약모밀추출물, 소나무잎추출물, 올리브오일, 녹차추출물, 바이오틴</p>
+          </div>
+          <div class="product-info-row full-width">
+            <span>사용할 때의 주의사항</span>
+            <p>가. 화장품 사용 시 또는 사용 후 직사광선에 의하여 사용부위가 붉은 반점, 부어오름 또는 가려움증 등의 이상 증상이나 부작용이 있는 경우에는 전문의 등과 상담 할 것. 나. 상처가 있는 부위 등에는 사용을 자제할 것 다. 보관 및 취급 시 주의사항 1) 어린이의 손이 닿지 않는 곳에 보관할 것 2) 직사광선을 피해서 보관할 것. 나. 눈에 들어갔을 때에는 즉시 씻어낼 것 마. 사용 후 물로 씻어내지 않으면 탈모 또는 탈색의 원인이 될 수 있으므로 주의할 것</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-brand">
-        <img src="img/symbol.svg" alt="" class="footer-symbol" width="20" height="26">
-        MOMORIMO
+
+    <div class="footer-main">
+      <div class="footer-inner">
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <p>상호: 모모리모</p>
+          <p>주소: 서울시 금천구 가산디지털1로 225, 지하2층 B203호</p>
+          <p><a href="https://www.momorimo.com" target="_blank" rel="noopener">www.momorimo.com</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACT</h4>
+          <p>소비자 상담실</p>
+          <p>070-5056-4449 / 010-2231-3679</p>
+          <p>MON-FRI 10:00 - 18:00</p>
+        </div>
       </div>
-      <div class="footer-copy">&copy; 2026 MOMORIMO. All rights reserved. MADE IN KOREA</div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 MOMORIMO. All rights reserved. MADE IN KOREA</div>
+      </div>
     </div>
   </footer>
 

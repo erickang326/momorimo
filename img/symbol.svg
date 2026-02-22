@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130" fill="none">
-  <!-- Circle -->
-  <circle cx="50" cy="58" r="38" stroke="currentColor" stroke-width="1.8"/>
-  <!-- Vertical stem -->
-  <line x1="50" y1="96" x2="50" y2="35" stroke="currentColor" stroke-width="1.8"/>
-  <!-- Droplet -->
-  <path d="M50 12 C50 12 36 34 36 43 C36 51 42.3 56 50 56 C57.7 56 64 51 64 43 C64 34 50 12 50 12Z" fill="currentColor"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 200" fill="none">
+  <!-- Outer Ring Left -->
+  <path d="M 34.6 110.5 A 30 30 0 0 0 29.3 168" stroke="#B8962E" stroke-width="2.5"/>
+  <!-- Outer Ring Right -->
+  <path d="M 45.4 110.5 A 30 30 0 0 1 50.7 168" stroke="#B8962E" stroke-width="2.5"/>
+  <!-- Central Drop -->
+  <path d="M 40 20 
+           C 40 80, 42 125, 48 158 
+           C 52 180, 44 180, 40 180
+           C 36 180, 28 180, 32 158
+           C 38 125, 40 80, 40 20 Z" fill="#B8962E"/>
 </svg>
